@@ -1,0 +1,26 @@
+/**************************
+*       Placeholders       *
+**************************/
+
+
+
+/* Slider
+   =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+
+%slider-height {
+    height: 160px;
+    @include screen ($tablet) {
+        height: 240px;
+    }
+    @include screen ($desktop) {
+        height: 320px;
+    }
+}
+
+// /* General
+//    =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+
+// %vertical-center {
+//     display: flex;
+//     align-items: center;
+// }

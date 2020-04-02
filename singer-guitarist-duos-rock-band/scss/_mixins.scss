@@ -1,0 +1,59 @@
+/**************************
+*        Mixins       *
+**************************/
+
+
+
+/* Media Queries
+   =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+
+// @mixin mobile {
+//     @media (max-width: #{$mobile - 1px}) {
+//         @content;
+//     }
+// }
+
+// @mixin mobile-lg {
+//     @media (min-width: #{$mobile}) {
+//         @content;
+//     }
+// }
+
+// @mixin tablet {
+//     @media (min-width: #{$tablet}) {
+//         @content;
+//     }
+// }
+
+// @mixin desktop {
+//     @media (min-width: #{$desktop}) {
+//         @content;
+//     }
+// }
+
+@mixin screen($size) {
+    @media (min-width: #{$size}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$tablet - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet}) and (max-width: #{$desktop - 1px}) {
+        @content;
+    }
+}
+
+
+/* General
+   =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+
+@mixin vertical-align($align: center) {
+    display: flex;
+    align-items: $align;
+}
