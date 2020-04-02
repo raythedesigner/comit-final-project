@@ -1,7 +1,15 @@
 /**************************
-*       Placeholders       *
+*      Placeholders       *
 **************************/
 
+
+
+/* General
+   =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+
+%square-corner {
+    border-radius: 0;
+}
 
 
 /* Slider
@@ -12,15 +20,10 @@
     @include screen ($tablet) {
         height: 240px;
     }
-    @include screen ($desktop) {
+    @include screen ($laptop) {
         height: 320px;
     }
+    @include screen ($desktop) {
+        height: 480px;
+    }
 }
-
-// /* General
-//    =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
-
-// %vertical-center {
-//     display: flex;
-//     align-items: center;
-// }

@@ -1,35 +1,11 @@
 /**************************
-*        Mixins       *
+*         Mixins          *
 **************************/
 
 
 
 /* Media Queries
    =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
-
-// @mixin mobile {
-//     @media (max-width: #{$mobile - 1px}) {
-//         @content;
-//     }
-// }
-
-// @mixin mobile-lg {
-//     @media (min-width: #{$mobile}) {
-//         @content;
-//     }
-// }
-
-// @mixin tablet {
-//     @media (min-width: #{$tablet}) {
-//         @content;
-//     }
-// }
-
-// @mixin desktop {
-//     @media (min-width: #{$desktop}) {
-//         @content;
-//     }
-// }
 
 @mixin screen($size) {
     @media (min-width: #{$size}) {
@@ -44,7 +20,7 @@
 }
 
 @mixin tablet {
-    @media (min-width: #{$tablet}) and (max-width: #{$desktop - 1px}) {
+    @media (min-width: #{$tablet}) and (max-width: #{$laptop - 1px}) {
         @content;
     }
 }
@@ -56,4 +32,46 @@
 @mixin vertical-align($align: center) {
     display: flex;
     align-items: $align;
+}
+
+@mixin heading($width: 64px, $height: 2px) {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1em;
+    @include tablet {
+        justify-content: start !important;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        display: inline-block;
+        width: $width;
+        height: $height;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        background-color: $accent-color;
+        @include tablet {
+            @if ($height == 1px) {
+                left: 16px;
+            }
+        }
+        @include mobile {
+            content: none;
+        }
+    }
+}
+
+@mixin last-margin-0($selector-1, $selector-2) {
+    #{$selector-1}:last-child {
+        #{$selector-2} {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@mixin side-padding($padding: $side-padding) {
+    padding-left: $padding;
+    padding-right: $padding;
 }

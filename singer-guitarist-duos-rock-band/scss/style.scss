@@ -7,6 +7,7 @@
 /* @IMPORT
    =========================================================================== */
 
+@import url('https://fonts.googleapis.com/css?family=Volkhov&display=swap');
 @import "variables";
 @import "mixins";
 @import "placeholders";
@@ -20,9 +21,48 @@
    /* General
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 
-.container-fluid {
+h2, h3, h4 {
+    &.san-serif {
+        font-family: inherit;
+    }
+    font-family: $volkhov;
+}
+
+.container-fluid, .navbar {
     @include screen($tablet) {
-        padding: 0 3.2rem;
+        @include side-padding();
+    }
+}
+
+.heading-1 {
+    @include heading();
+}
+
+.heading-2 {
+    @include heading(32px, 1px);
+}
+
+
+/* Navbar
+   =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+
+.navbar {
+    .navbar-toggler {
+        padding: 0;
+        border: transparent;
+        .hamburger-menu {
+            color: $accent-color;
+        }
+        .fa-1x {
+            font-size: 1.5rem;
+        }
+    }
+    .navbar-nav {
+        li {
+            &:hover {
+                cursor: pointer;
+            }
+        }
     }
 }
 
@@ -36,6 +76,12 @@
             font-size: 1.5rem;
         }
     }
+    .carousel-indicators li {
+        width: 10px;
+        height: 10px;
+        margin: 0 4px;
+        border-radius: 50%;
+    }
     @extend %slider-height;
     .carousel-item {
         @extend %slider-height;
@@ -48,16 +94,20 @@
         min-width: 100%;
         margin: 0 auto;
     }
+    .carousel-item:after {
+        content:"";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0,0,0,0.6);
+    }
     .carousel-caption {
         top: 50%;
         transform: translateY(-50%);
         bottom: initial;
-    }
-    .carousel-indicators li {
-        width: 10px;
-        height: 10px;
-        margin: 0 4px;
-        border-radius: 50%;
     }
 }
 
@@ -66,8 +116,11 @@
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 
 .services {
-    i.fa::before{
-        font-size: 4.8em;
+    i.fa {
+        color: $accent-color;
+        &::before{
+            font-size: 4.8em;
+        }
     }
     .service-change-layout {
         @include tablet {
@@ -84,6 +137,9 @@
             display: none;
         }
     }
+    @include mobile {
+        @include last-margin-0(".col-8", "h4");
+    }
 }
 
 
@@ -98,19 +154,33 @@
 
 .team {
     .card-header {
+        background-color: rgba(0,0,0,.06);
         h3 {
-            span {
-                font-weight: 700;
+            button {
+                color: $accent-color;
+                &:hover {
+                    color: darken($accent-color, 16%);
+                }
+                span {
+                    font-weight: 700;
+                }
             }
         }
     }
+    .card-body {
+        padding: 1.6rem;
+        & > .card {
+            @extend %square-corner;
+            border: 0;
+        }
+    }
     .card-img {
-        border-radius: 0;
+        @extend %square-corner;
     }
     .card-title {
         .certificate {
             font-size: 1.0rem;
-            margin-left: 0.8rem;
+            margin-left: 0.4rem;
         }
     }
 }
