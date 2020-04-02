@@ -1,2 +1,6 @@
-# comit-final-project
-ComIT Node.js Final Project
+# ComIT Node.js Final Project
+
+What’s used:
+- HTML
+- CSS
+- JavaScript
