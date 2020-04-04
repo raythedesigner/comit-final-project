@@ -18,12 +18,12 @@
 %slider-height {
     height: 160px;
     @include screen ($tablet) {
-        height: 240px;
-    }
-    @include screen ($laptop) {
         height: 320px;
     }
-    @include screen ($desktop) {
+    @include screen ($laptop) {
         height: 480px;
+    }
+    @include screen ($desktop) {
+        height: 640px;
     }
 }

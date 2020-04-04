@@ -3,7 +3,7 @@
 **************************/
 /* @IMPORT
    =========================================================================== */
-@import url("https://fonts.googleapis.com/css?family=Volkhov&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap");
 /**************************
 *        Variables        *
 **************************/
@@ -35,19 +35,19 @@
 
 @media (min-width: 768px) {
   .slide-banner, .slide-banner .carousel-item {
-    height: 240px;
+    height: 320px;
   }
 }
 
 @media (min-width: 992px) {
   .slide-banner, .slide-banner .carousel-item {
-    height: 320px;
+    height: 480px;
   }
 }
 
 @media (min-width: 1440px) {
   .slide-banner, .slide-banner .carousel-item {
-    height: 480px;
+    height: 640px;
   }
 }
 
@@ -56,7 +56,7 @@
 /* General
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 h2, h3, h4 {
-  font-family: "Volkhov", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-family: "Caveat", cursive;
 }
 
 h2.san-serif, h3.san-serif, h4.san-serif {
@@ -94,7 +94,7 @@ h2.san-serif, h3.san-serif, h4.san-serif {
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
-  background-color: #25A468;
+  background-color: #005B97;
 }
 
 @media (max-width: 767px) {
@@ -127,7 +127,7 @@ h2.san-serif, h3.san-serif, h4.san-serif {
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
-  background-color: #25A468;
+  background-color: #005B97;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -150,7 +150,7 @@ h2.san-serif, h3.san-serif, h4.san-serif {
 }
 
 .navbar .navbar-toggler .hamburger-menu {
-  color: #25A468;
+  color: #005B97;
 }
 
 .navbar .navbar-toggler .fa-1x {
@@ -194,7 +194,7 @@ h2.san-serif, h3.san-serif, h4.san-serif {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.32);
 }
 
 .slide-banner .carousel-caption {
@@ -207,7 +207,7 @@ h2.san-serif, h3.san-serif, h4.san-serif {
 /* Services
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 .services i.fa {
-  color: #25A468;
+  color: #005B97;
 }
 
 .services i.fa::before {
@@ -253,11 +253,11 @@ h2.san-serif, h3.san-serif, h4.san-serif {
 }
 
 .team .card-header h3 button {
-  color: #25A468;
+  color: #005B97;
 }
 
 .team .card-header h3 button:hover {
-  color: #16613e;
+  color: #002a45;
 }
 
 .team .card-header h3 button span {
