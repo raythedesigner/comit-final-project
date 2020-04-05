@@ -3,6 +3,7 @@
 **************************/
 /* @IMPORT
    =========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap");
 /**************************
 *        Variables        *
@@ -23,7 +24,7 @@
 **************************/
 /* General
    =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
-.team .card-body > .card, .team .card-img {
+.bands .card-body > .card, .bands .card-img {
   border-radius: 0;
 }
 
@@ -31,6 +32,12 @@
    =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 .slide-banner, .slide-banner .carousel-item {
   height: 160px;
+}
+
+@media (min-width: 576px) {
+  .slide-banner, .slide-banner .carousel-item {
+    height: 240px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -55,12 +62,58 @@
    =========================================================================== */
 /* General
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
-h2, h3, h4 {
+h2, h3, h4, h5 {
+  font-family: "Zilla Slab", serif;
+  font-weight: 700;
+}
+
+h2.san-serif, h3.san-serif, h4.san-serif, h5.san-serif {
   font-family: "Caveat", cursive;
 }
 
-h2.san-serif, h3.san-serif, h4.san-serif {
+p, ul li {
+  font-family: "Caveat", cursive;
+  font-size: 1.25rem;
+}
+
+.nav a {
+  font-family: "Zilla Slab", serif;
+  font-weight: 400;
+}
+
+p.regular-text {
   font-family: inherit;
+  font-size: 1rem;
+}
+
+span.click.link {
+  cursor: pointer;
+  color: #007BFF;
+  text-decoration: none;
+  font-family: "Zilla Slab", serif;
+  font-weight: 400;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  -webkit-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+}
+
+span.click.link:hover {
+  color: #0056b3;
+  text-decoration: underline;
 }
 
 @media (min-width: 768px) {
@@ -76,14 +129,6 @@ h2.san-serif, h3.san-serif, h4.san-serif {
   margin-bottom: 1em;
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-  .heading-1 {
-    -webkit-box-pack: start !important;
-        -ms-flex-pack: start !important;
-            justify-content: start !important;
-  }
-}
-
 .heading-1::before {
   content: '';
   position: absolute;
@@ -97,24 +142,10 @@ h2.san-serif, h3.san-serif, h4.san-serif {
   background-color: #005B97;
 }
 
-@media (max-width: 767px) {
-  .heading-1::before {
-    content: none;
-  }
-}
-
 .heading-2 {
   position: relative;
   display: inline-block;
   margin-bottom: 1em;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  .heading-2 {
-    -webkit-box-pack: start !important;
-        -ms-flex-pack: start !important;
-            justify-content: start !important;
-  }
 }
 
 .heading-2::before {
@@ -136,9 +167,56 @@ h2.san-serif, h3.san-serif, h4.san-serif {
   }
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .heading-2 {
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: start !important;
+  }
+}
+
 @media (max-width: 767px) {
   .heading-2::before {
     content: none;
+  }
+}
+
+.heading-3 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1em;
+  display: block;
+  margin-bottom: 0;
+  margin-top: 1em;
+}
+
+.heading-3::before {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #005B97;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .heading-3::before {
+    left: 16px;
+  }
+}
+
+.heading-3::before {
+  bottom: 0;
+  top: -15px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .heading-3::before {
+    left: 50%;
   }
 }
 
@@ -204,21 +282,25 @@ h2.san-serif, h3.san-serif, h4.san-serif {
   bottom: initial;
 }
 
-/* Services
+.slide-banner .carousel-caption a {
+  color: #FFFFFF;
+}
+
+/* What Makes Them So Special?
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
-.services i.fa {
+.special i.fa {
   color: #005B97;
 }
 
-.services i.fa::before {
+.special i.fa::before {
   font-size: 4.8em;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .services .service-change-layout .card-title {
+  .special .special-change-layout .card-title {
     text-align: left !important;
   }
-  .services .service-change-layout .col-md-2 {
+  .special .special-change-layout .col-md-2 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -228,52 +310,95 @@ h2.san-serif, h3.san-serif, h4.san-serif {
   }
 }
 
+@media (min-width: 768px) {
+  .special .card {
+    pointer-events: none;
+  }
+}
+
 @media (max-width: 767px) {
-  .services .card-text {
+  .special .card {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 767px) {
+  .special .card .card-text {
     display: none;
   }
 }
 
 @media (max-width: 767px) {
-  .services .col-8:last-child h4 {
+  .special .col-8:last-child h4 {
     margin-bottom: 0;
   }
 }
 
-/* Video & Team
+/* The Singer / Guitarist Duo & Bands
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+.duo img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.bands .card-header {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.bands .card-header h3 button {
+  color: #005B97;
+  font-size: 1.24rem;
+}
+
+.bands .card-header h3 button:hover {
+  color: #002a45;
+}
+
+.bands .card-body {
+  padding: 1.6rem;
+}
+
+.bands .card-body > .card {
+  border: 0;
+}
+
+.bands h4.card-title {
+  font-size: 1.24rem;
+}
+
+.bands h4.card-title .role {
+  font-size: 1rem;
+  margin-left: 0.16rem;
+}
+
+.bands ul.card-text {
+  padding-left: 28px;
+}
+
+/* Individual Band Pages
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+@media (min-width: 768px) and (max-width: 991px) {
+  .records.container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .records.container .row > div .card {
+    margin-bottom: 1.6rem;
+  }
+  .records.container .row > div:last-of-type .card {
+    margin-bottom: 0;
+  }
+}
+
+.records.container .row .card-body {
+  padding: 1.25rem 1rem;
+}
+
 @media (max-width: 767px) {
   .video {
     margin-bottom: 1.6rem;
   }
-}
-
-.team .card-header {
-  background-color: rgba(0, 0, 0, 0.06);
-}
-
-.team .card-header h3 button {
-  color: #005B97;
-}
-
-.team .card-header h3 button:hover {
-  color: #002a45;
-}
-
-.team .card-header h3 button span {
-  font-weight: 700;
-}
-
-.team .card-body {
-  padding: 1.6rem;
-}
-
-.team .card-body > .card {
-  border: 0;
-}
-
-.team .card-title .certificate {
-  font-size: 1.0rem;
-  margin-left: 0.4rem;
 }
 /*# sourceMappingURL=style.css.map */

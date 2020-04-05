@@ -38,9 +38,6 @@
     position: relative;
     display: inline-block;
     margin-bottom: 1em;
-    @include tablet {
-        justify-content: start !important;
-    }
     &::before {
         content: '';
         position: absolute;
@@ -56,9 +53,6 @@
             @if ($height == 1px) {
                 left: 16px;
             }
-        }
-        @include mobile {
-            content: none;
         }
     }
 }

@@ -17,6 +17,9 @@
 
 %slider-height {
     height: 160px;
+    @include screen ($mobile) {
+        height: 240px;
+    }
     @include screen ($tablet) {
         height: 320px;
     }

@@ -7,6 +7,7 @@
 /* @IMPORT
    =========================================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
 @import "variables";
 @import "mixins";
@@ -21,11 +22,53 @@
    /* General
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 
-h2, h3, h4 {
+h2, h3, h4, h5 {
     &.san-serif {
-        font-family: inherit;
+        font-family: $caveat;
     }
+    font-family: $zilla;
+    font-weight: 700;
+}
+
+p, ul li {
     font-family: $caveat;
+    font-size: 1.25rem;
+}
+
+.nav a {
+    font-family: $zilla;
+    font-weight: 400;
+}
+
+p.regular-text {
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+span.click.link {
+    cursor: pointer;
+    color: #007BFF;
+    text-decoration: none;
+    font-family: $zilla;
+    font-weight: 400;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    &:hover{
+        color: #0056b3;
+        text-decoration: underline;
+    }
 }
 
 .container-fluid, .navbar {
@@ -40,6 +83,28 @@ h2, h3, h4 {
 
 .heading-2 {
     @include heading(32px, 1px);
+    @include tablet {
+        justify-content: start !important;
+    }
+    &::before {
+        @include mobile {
+            content: none;
+        }
+    }
+}
+
+.heading-3 {
+    @include heading(32px, 1px);
+    display: block;
+    margin-bottom: 0;
+    margin-top: 1em;
+    &::before {
+        bottom: 0;
+        top: -15px;
+        @include tablet {
+            left: 50%;
+        }
+    }
 }
 
 
@@ -108,21 +173,24 @@ h2, h3, h4 {
         top: 50%;
         transform: translateY(-50%);
         bottom: initial;
+        a {
+            color: #FFFFFF;
+        }
     }
 }
 
 
-/* Services
+/* What Makes Them So Special?
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 
-.services {
+.special {
     i.fa {
         color: $accent-color;
         &::before{
             font-size: 4.8em;
         }
     }
-    .service-change-layout {
+    .special-change-layout {
         @include tablet {
             .card-title {
                 text-align: left !important;
@@ -132,9 +200,17 @@ h2, h3, h4 {
             }
         }
     }
-    .card-text {
+    .card {
+        @include screen($tablet) {
+            pointer-events: none;
+        }
         @include mobile {
-            display: none;
+            cursor: pointer;
+        }
+        .card-text {
+            @include mobile {
+                display: none;
+            }
         }
     }
     @include mobile {
@@ -143,26 +219,25 @@ h2, h3, h4 {
 }
 
 
-/* Video & Team
+/* The Singer / Guitarist Duo & Bands
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 
-.video {
-    @include mobile {
-        margin-bottom: 1.6rem;
+.duo {
+    img {
+        width: 100%;
+        margin-bottom: 20px;
     }
 }
 
-.team {
+.bands {
     .card-header {
         background-color: rgba(0,0,0,.06);
         h3 {
             button {
                 color: $accent-color;
+                font-size: 1.24rem;
                 &:hover {
                     color: darken($accent-color, 16%);
-                }
-                span {
-                    font-weight: 700;
                 }
             }
         }
@@ -177,10 +252,43 @@ h2, h3, h4 {
     .card-img {
         @extend %square-corner;
     }
-    .card-title {
-        .certificate {
-            font-size: 1.0rem;
-            margin-left: 0.4rem;
+    h4.card-title {
+        font-size: 1.24rem;
+        .role {
+            font-size: 1rem;
+            margin-left: 0.16rem;
         }
+    }
+    ul.card-text {
+        padding-left: 28px;
+    }
+}
+
+
+/* Individual Band Pages
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+
+.records.container {
+    @include tablet {
+        max-width: 100%;
+    }
+    .row {
+        @include mobile {
+            & > div .card {
+                margin-bottom: 1.6rem;
+            }
+            & > div:last-of-type .card {
+                margin-bottom: 0;
+            }
+        }
+        .card-body {
+            padding: 1.25rem 1rem;
+        }    
+    }
+}
+
+.video {
+    @include mobile {
+        margin-bottom: 1.6rem;
     }
 }
