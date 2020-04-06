@@ -1,6 +1,6 @@
-// ------------------------------- //
-// -------- jQuery Script -------- //
-// ------------------------------- //
+// ------------------------------------- //
+// -------- jQuery & JavaScript -------- //
+// ------------------------------------- //
 
 
 
@@ -49,42 +49,67 @@ copyrightYear.innerHTML = year;
 // Get age of each musician
 
 function getAge(dateString) {
-    var today = new Date();
-    var birthDate = new Date(dateString);
-    var age = today.getFullYear() - birthDate.getFullYear();
-    var m = today.getMonth() - birthDate.getMonth();
+    const today = new Date();
+    const birthDate = new Date(dateString);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
         age--;
     }
     return age;
 }
-// Robert Plant
-var age_robertPlant = document.getElementById('age_robertPlant');
-age_robertPlant.innerHTML = getAge('1948, 08, 20');
-// Jimmy Page
-var age_jimmyPage = document.getElementById('age_jimmyPage');
-age_jimmyPage.innerHTML = getAge('1944, 01, 09');
-// Steven Tyler
-var age_stevenTyler = document.getElementById('age_stevenTyler');
-age_stevenTyler.innerHTML = getAge('1948, 03, 26');
-// Joe Perry
-var age_joePerry = document.getElementById('age_joePerry');
-age_joePerry.innerHTML = getAge('1950, 09, 10');
-// Brian Johnson
-var age_brianJohnson = document.getElementById('age_brianJohnson');
-age_brianJohnson.innerHTML = getAge('1947, 10, 05');
-// Angus Young
-var age_angusYoung = document.getElementById('age_angusYoung');
-age_angusYoung.innerHTML = getAge('1955, 03, 31');
-// Axl Rose
-var age_axlRose = document.getElementById('age_axlRose');
-age_axlRose.innerHTML = getAge('1962, 02, 06');
-// Slash
-var age_slash = document.getElementById('age_slash');
-age_slash.innerHTML = getAge('1965, 07, 23');
-// Koshi Inaba
-var age_koshiInaba = document.getElementById('age_koshiInaba');
-age_koshiInaba.innerHTML = getAge('1964, 09, 23');
-// Tak Matsumoto
-var age_takMatsumoto = document.getElementById('age_takMatsumoto');
-age_takMatsumoto.innerHTML = getAge('1961, 03, 27');
+
+const age_robertPlant = '1948, 08, 20';
+const age_jimmyPage = '1944, 01, 09';
+const age_stevenTyler = '1948, 03, 26';
+const age_joePerry = '1950, 09, 10';
+const age_brianJohnson = '1947, 10, 05';
+const age_angusYoung = '1955, 03, 31';
+const age_axlRose = '1962, 02, 06';
+const age_slash = '1965, 07, 23';
+const age_koshiInaba = '1964, 09, 23';
+const age_takMatsumoto = '1961, 03, 27';
+
+let age_singer = document.getElementById('age_singer');
+switch (age_singer.textContent) {
+    case 'age_robertPlant':
+        age_singer.innerHTML = getAge(age_robertPlant);
+        break;
+    case 'age_stevenTyler':
+        age_singer.innerHTML = getAge(age_stevenTyler);
+        break;
+    case 'age_brianJohnson':
+        age_singer.innerHTML = getAge(age_brianJohnson);
+        break;
+    case 'age_axlRose':
+        age_singer.innerHTML = getAge(age_axlRose);
+        break;
+    case 'age_koshiInaba':
+        age_singer.innerHTML = getAge(age_koshiInaba);
+        break;
+    default:
+        age_singer.innerHTML = '--';
+        break;
+}
+
+let age_guitarist = document.getElementById('age_guitarist');
+switch (age_guitarist.textContent) {
+    case 'age_jimmyPage':
+        age_guitarist.innerHTML = getAge(age_jimmyPage);
+        break;
+    case 'age_joePerry':
+        age_guitarist.innerHTML = getAge(age_joePerry);
+        break;
+    case 'age_angusYoung':
+        age_guitarist.innerHTML = getAge(age_angusYoung);
+        break;
+    case 'age_slash':
+        age_guitarist.innerHTML = getAge(age_slash);
+        break;
+    case 'age_takMatsumoto':
+        age_guitarist.innerHTML = getAge(age_takMatsumoto);
+        break;
+    default:
+        age_guitarist.innerHTML = '--';
+        break;
+}
